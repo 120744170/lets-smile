@@ -16,7 +16,11 @@
     <div class="progress" id="loader">
       <div class="indeterminate"></div>
     </div>
-    <div style="position: relative" class="margin">
+		 <div style="position: relative;" class="margin">
+     <img style="display: none;" id="smiley" src="smiley.jpg" />
+     <img id="sad" src="sad.jpg" />
+    </div>
+    <div style="position: absolute;left: -500px;" class="margin">
       <video onloadedmetadata="onPlay(this)" id="inputVideo" autoplay muted playsinline></video>
       <canvas id="overlay" />
     </div>
@@ -134,9 +138,11 @@
 				var isHappy = resizedResult.expressions.happy > 0.8
 
 				if (isHappy) {
-					$("body").css("background-color","#00800070")
+					$("#sad").css("display","none")
+					$("#smiley").css("display","block")
 				}else{
-					$("body").css("background-color","white")
+					$("#smiley").css("display","none")
+					$("#sad").css("display","block")
 				}
 
 				console.log(isHappy);

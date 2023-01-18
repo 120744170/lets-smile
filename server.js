@@ -17,7 +17,7 @@ app.use(express.static(path.join(__dirname, '../../dist')))
 
 app.get('/', (req, res) => res.redirect('/lets-smile'))
 app.get('/lets-smile', (req, res) => res.sendFile(path.join(viewsDir, 'webcamFaceExpressionRecognition.html')))
-
+app.get('/lets-smile-emoji', (req, res) => res.sendFile(path.join(viewsDir, 'smileFaceEmoji.html')))
 
 app.post('/fetch_external_image', async (req, res) => {
   const { imageUrl } = req.body

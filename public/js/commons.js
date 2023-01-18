@@ -29,7 +29,10 @@ function renderNavBar(navbarId, exampleUri) {
 			uri: 'lets-smile',
       name: "Let's Smile"
     },
-    
+		{
+			uri: 'lets-smile-emoji',
+			name: "Emoji"
+		},
   ]
 
   const navbar = $(navbarId).get(0)
