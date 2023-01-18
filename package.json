@@ -1,11 +1,12 @@
 {
   "scripts": {
     "start": "node server.js",
-		"build": "npm run build"
+		"build": "netlify-lambda build express"
   },
   "author": "Lawliet",
   "license": "MIT",
   "dependencies": {
+		"netlify-lambda": "^1.6.3",
     "express": "^4.17.1",
     "request": "^2.88.2"
   }
