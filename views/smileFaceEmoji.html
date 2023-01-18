@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="face-api.js"></script>
+  <script src="/face-api.js"></script>
   <script src="js/commons.js"></script>
   <script src="js/faceDetectionControls.js"></script>
   <link rel="stylesheet" href="styles.css">
@@ -12,7 +12,7 @@
 <body>
   <div id="navbar"></div>
   <div class="center-content page-container">
-
+		<h3 id="conten-header">Hadi Biraz Gülümse</h3>
     <div class="progress" id="loader">
       <div class="indeterminate"></div>
     </div>
@@ -26,7 +26,7 @@
     </div>
 
     <div class="row side-by-side">
-<div id="face_detector_selection_control" class="row input-field" style="margin-right: 20px;">
+<!-- <div id="face_detector_selection_control" class="row input-field" style="margin-right: 20px;">
         <select id="selectFaceDetector">
           <option value="ssd_mobilenetv1">SSD Mobilenet V1</option>
           <option value="tiny_face_detector">Tiny Face Detector</option>
@@ -95,7 +95,7 @@
           <i class="material-icons left">+</i>
         </button>
       </div>
-    </span> 
+    </span>  -->
 
   </body>
 
@@ -138,9 +138,11 @@
 				var isHappy = resizedResult.expressions.happy > 0.8
 
 				if (isHappy) {
+					$("#conten-header").text("Süpersin :)")
 					$("#sad").css("display","none")
 					$("#smiley").css("display","block")
 				}else{
+					$("#conten-header").text("Hadi biraz gülümse")
 					$("#smiley").css("display","none")
 					$("#sad").css("display","block")
 				}
