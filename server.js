@@ -15,7 +15,7 @@ app.use(express.static(path.join(__dirname, './media')))
 app.use(express.static(path.join(__dirname, './weights')))
 app.use(express.static(path.join(__dirname, './dist')))
 
-app.get('/', (req, res) => res.redirect('/lets-smile'))
+app.get('/', (req, res) => res.redirect('/lets-smile-emoji'))
 app.get('/lets-smile', (req, res) => res.sendFile(path.join(viewsDir, 'webcamFaceExpressionRecognition.html')))
 app.get('/lets-smile-emoji', (req, res) => res.sendFile(path.join(viewsDir, 'smileFaceEmoji.html')))
 

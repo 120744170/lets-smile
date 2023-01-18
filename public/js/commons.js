@@ -26,11 +26,11 @@ function renderNavBar(navbarId, exampleUri) {
   const examples = [
     
     {
-			uri: 'lets-smile',
+			uri: '/lets-smile',
       name: "Let's Smile"
     },
 		{
-			uri: 'lets-smile-emoji',
+			uri: '/lets-smile-emoji',
 			name: "Emoji"
 		},
   ]
@@ -67,8 +67,9 @@ function renderNavBar(navbarId, exampleUri) {
 
   examples
     .forEach(ex => {
-      const li = document.createElement('li')
-      if (ex.uri === exampleUri) {
+			const li = document.createElement('li')
+			console.log(location.pathname);
+      if (ex.uri === location.pathname) {
         li.style.background='#b0b0b0'
       }
       const a = document.createElement('a')
