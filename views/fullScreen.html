@@ -15,11 +15,11 @@
 	<div style="display: none;" id="navbar"></div>
 	<div class="center-content page-container">
 		<h3 id="conten-header" style="color: white;">Hadi Biraz Gülümse</h3>
-		<!-- <div style="background-image: url('sad.jpg');width: 500px;height: 350px;" id="emotion"></div> -->
-		
+
 		<div class="progress" id="loader">
 			<div class="indeterminate"></div>
 		</div>
+		
 		<div style="opacity: 0;position: fixed;" class="margin">
 			<video onloadedmetadata="onPlay(this)" id="inputVideo" autoplay muted playsinline></video>
 			<canvas id="overlay" />
@@ -48,7 +48,6 @@
 		if (videoEl.paused || videoEl.ended || !isFaceDetectionModelLoaded())
 			return setTimeout(() => onPlay())
 
-
 		const options = getFaceDetectorOptions()
 
 		const ts = Date.now()
@@ -65,18 +64,12 @@
 
 			var isHappy = resizedResult.expressions.happy > 0.8
 
-			// if (isHappy) {
-			// 	$("#emotion").css("background-image", "url('smiley.jpg')");
-			// }else{
-			// 	$("#emotion").css("background-image", "url('sad.jpg')");
-			// }
 			if (isHappy) {
 				$("#emotion").attr("src", "smiley.jpg");
 				//if kontrolü yapılmadığın zaman önce yazı değişiyor fotoğrafın değişmesi zaman alıyor. (sunucuda)
 				if ($("#emotion").attr("src") == "smiley.jpg") {
 					$("#conten-header").text("Süpersin :)");
 				}
-				$("#conten-header").text("Süpersin :)");
 			} else {
 				$("#emotion").attr("src", "sad.jpg");
 				//if kontrolü yapılmadığın zaman önce yazı değişiyor fotoğrafın değişmesi zaman alıyor. (sunucuda)
