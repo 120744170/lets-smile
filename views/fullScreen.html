@@ -72,10 +72,18 @@
 			// }
 			if (isHappy) {
 				$("#emotion").attr("src", "smiley.jpg");
+				//if kontrolü yapılmadığın zaman önce yazı değişiyor fotoğrafın değişmesi zaman alıyor. (sunucuda)
+				if ($("#emotion").attr("src") == "smiley.jpg") {
+					$("#conten-header").text("Süpersin :)");
+				}
 				$("#conten-header").text("Süpersin :)");
 			} else {
 				$("#emotion").attr("src", "sad.jpg");
-				$("#conten-header").text("Hadi Biraz Gülümse");
+				//if kontrolü yapılmadığın zaman önce yazı değişiyor fotoğrafın değişmesi zaman alıyor. (sunucuda)
+				if ($("#emotion").attr("src") == "sad.jpg") {
+					$("#conten-header").text("Hadi Biraz Gülümse");
+				}
+				
 			}
 
 			console.log(isHappy);
