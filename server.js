@@ -19,6 +19,7 @@ app.get('/', (req, res) => res.redirect('/fullscreen'))
 app.get('/lets-smile', (req, res) => res.sendFile(path.join(viewsDir, 'webcamFaceExpressionRecognition.html')))
 app.get('/lets-smile-emoji', (req, res) => res.sendFile(path.join(viewsDir, 'smileFaceEmoji.html')))
 app.get('/fullscreen', (req, res) => res.sendFile(path.join(viewsDir, 'fullScreen.html')))
+app.get('/fullscreen-ssd', (req, res) => res.sendFile(path.join(viewsDir, 'fullScreen-ssd.html')))
 
 app.post('/fetch_external_image', async (req, res) => {
   const { imageUrl } = req.body
